@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Glow-TTS Samples Korean</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class='section'>
+        <h1>Audio Samples from "Glow-TTS: A Generative Flow for 
+            Text-to-Speech via Monotonic Alignment Search" (Korean, Non-official)</h1>
+
+        <h4>Contents</h4>
+        <p>
+        <ul class='toc'>
+            <li><a href='#section-1'>Abstract</a></li>
+            <li><a href='#section-2'>Single Speaker TTS</a></li>
+            <li><a href='#section-3'>Diversity</a></li>
+            <li><a href='#section-4'>Length Robustness</a></li>
+            <li><a href='#section-5'>Length Controllability</a></li>
+        </ul>
+        </p>
+
+        <h4>References</h4>
+        <p>
+        <ul>
+            <li> <a href='https://arxiv.org/abs/2005.11129'>Paper(arXiv:2005.11129)</a></li>
+            <li> <a href='https://github.com/jaywalnut310/glow-tts'>Github Repository(Official)</a></li>
+            <li> <a href='https://jaywalnut310.github.io/glow-tts-demo/index.html'>Original Sample Page</a></li>
+            <li> <a href='https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset/version/2'>KSS Datasets</a></li>
+            <li> <a href='https://github.com/Kyubyong/g2pK'>Korean G2P Module</a></li>
+        </ul>
+        </p>
+    </div>
+
+    <hr>
+
+    <div id='section-1' class='section'>
+
+        <h3>Abstract</h3>
+        <div class='music'>
+            <p>
+                최근, 문장에서 병렬적으로 Mel-spectrogram을 생성할 수 있는, FastSpeech, ParaNet과 같은 TTS 모델이 제안된 바 있다. 
+                여러 장점을 선보였지만, 앞서 언급한 병렬적 TTS 모델들은 외부 정렬기의 역할을 담당하는 자기 회귀 TTS 모델의 지도 없이는 
+                학습을 진행할 수 없다는 한계점을 지니고 있다. 이 연구에서는 외부 정렬기 없이도 병렬적 TTS를 가능케 하는 Flow 기반 생성 모델, 
+                Glow-TTS를 제안하고, Glow-TTS의 학습을 위한 자체적 정렬 탐색 알고리즘, Monotonic Alignment Search(MAS)를 소개한다. 
+                MAS는 Flow의 성질을 활용하여 주어진 문장과 음성의 잠재 표현 간의 가장 적합한 단조적 정렬 상태를 탐색한다. 
+                Glow-TTS는 자기 회귀 TTS 모델인 Tacotron2보다 훨씬 빠른 속도로 음성을 합성하면서도, 비슷한 수준의 음질을 보여준다. 
+                End-to-end로 1분 길이의 음성을 합성하는 데에는 단 1.5초가 소요된다. 또한 이 모델은 큰 어려움 없이 복수의 발화자를 학습할 수 있도록 
+                확장될 수 있다.
+            </p>
+            
+            <div class='labeled-audio'>
+                <audio preload='metadata' controls><source src='audio/1/%EC%B4%88%EB%A1%9D.wav' type='audio/mpeg'></audio>
+            </div>   
+                
+        </div>
+
+    </div>
+                            
+    <div id='section-2' class='section'>
+
+        <h3>Single Speaker TTS</h3>
+        
+        <div class='labeled-audio'>
+            
+            <h4>부모가 저지르는 큰 실수 중 하나는 자기 아이를 다른 집 아이와 비교하는 것이다.</h4>
+            
+            <p>GT</p>
+            <audio preload='metadata' controls><source src='audio/2/1_0079_22.05k.wav' type='audio/mpeg'></audio>
+            
+            <p>GT(WaveGlow)</p>
+            <audio preload='metadata' controls><source src='audio/2/1_0079_22.05k.wav_synthesis.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.333)</p>
+            <audio preload='metadata' controls><source src='audio/2/1_0079_0.333.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.500)</p>
+            <audio preload='metadata' controls><source src='audio/2/1_0079_0.500.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.667)</p>
+            <audio preload='metadata' controls><source src='audio/2/1_0079_0.667.wav' type='audio/mpeg'></audio>
+            
+        </div>
+        
+        <div class='labeled-audio'>
+            
+            <h4>모든 조건이 동일하다면 제일 간단한 방법이 제일 좋은 방법이에요.</h4>
+            
+            <p>GT</p>
+            <audio preload='metadata' controls><source src='audio/2/2_0293_22.05k.wav' type='audio/mpeg'></audio>
+            
+            <p>GT(WaveGlow)</p>
+            <audio preload='metadata' controls><source src='audio/2/2_0293_22.05k.wav_synthesis.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.333)</p>
+            <audio preload='metadata' controls><source src='audio/2/2_0293_0.333.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.500)</p>
+            <audio preload='metadata' controls><source src='audio/2/2_0293_0.500.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.667)</p>
+            <audio preload='metadata' controls><source src='audio/2/2_0293_0.667.wav' type='audio/mpeg'></audio>
+            
+        </div>
+        
+        <div class='labeled-audio'>
+            
+            <h4>처음 이곳에 이사 왔을 때 걸어서 닿는 거리에 식료품 가게가 있다는 게 참 좋았어요.</h4>
+            
+            <p>GT</p>
+            <audio preload='metadata' controls><source src='audio/2/3_1971_22.05k.wav' type='audio/mpeg'></audio>
+            
+            <p>GT(WaveGlow)</p>
+            <audio preload='metadata' controls><source src='audio/2/3_1971_22.05k.wav_synthesis.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.333)</p>
+            <audio preload='metadata' controls><source src='audio/2/3_1971_0.333.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.500)</p>
+            <audio preload='metadata' controls><source src='audio/2/3_1971_0.500.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.667)</p>
+            <audio preload='metadata' controls><source src='audio/2/3_1971_0.667.wav' type='audio/mpeg'></audio>
+            
+        </div>
+        
+        <div class='labeled-audio'>
+            
+            <h4>이 학생은 제가 지금껏 지도한 학생들 중에서 가장 뛰어난 학생입니다.</h4>
+            
+            <p>GT</p>
+            <audio preload='metadata' controls><source src='audio/2/4_3004_22.05k.wav' type='audio/mpeg'></audio>
+            
+            <p>GT(WaveGlow)</p>
+            <audio preload='metadata' controls><source src='audio/2/4_3004_22.05k.wav_synthesis.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.333)</p>
+            <audio preload='metadata' controls><source src='audio/2/4_3004_0.333.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.500)</p>
+            <audio preload='metadata' controls><source src='audio/2/4_3004_0.500.wav' type='audio/mpeg'></audio>
+            
+            <p>Glow-TTS (T=0.667)</p>
+            <audio preload='metadata' controls><source src='audio/2/4_3004_0.667.wav' type='audio/mpeg'></audio>
+            
+        </div>
+
+
+    </div>
+                            
+    <div id='section-3' class='section'>
+
+        <h3>Diversity</h3>
+        
+        <div class='labeled-audio'>
+            
+            <h4>이 문제를 해결하기 전에는 집에 못 가.</h4>
+            
+            <p>Same gaussian noise ε, different temperature T=0.100</p>
+            <audio preload='metadata' controls><source src='audio/3/%EC%9D%B4%20%EB%AC%B8%EC%A0%9C%EB%A5%BC%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%EB%8A%94%20%EC%A7%91%EC%97%90%20%EB%AA%BB%20_0.1.wav' type='audio/mpeg'></audio>
+            
+            <p>Same gaussian noise ε, different temperature T=0.333</p>
+            <audio preload='metadata' controls><source src='audio/3/%EC%9D%B4%20%EB%AC%B8%EC%A0%9C%EB%A5%BC%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%EB%8A%94%20%EC%A7%91%EC%97%90%20%EB%AA%BB%20_0.333.wav' type='audio/mpeg'></audio>
+            
+            <p>Same gaussian noise ε, different temperature T=0.667</p>
+            <audio preload='metadata' controls><source src='audio/3/%EC%9D%B4%20%EB%AC%B8%EC%A0%9C%EB%A5%BC%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%EB%8A%94%20%EC%A7%91%EC%97%90%20%EB%AA%BB%20_0.667.wav' type='audio/mpeg'></audio>
+            
+            <p>Same gaussian noise ε, different temperature T=1.000</p>
+            <audio preload='metadata' controls><source src='audio/3/%EC%9D%B4%20%EB%AC%B8%EC%A0%9C%EB%A5%BC%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%EB%8A%94%20%EC%A7%91%EC%97%90%20%EB%AA%BB%20_1.0.wav' type='audio/mpeg'></audio>
+            
+            <p>Different gaussian noise ε1, same temperature T=0.667</p>
+            <audio preload='metadata' controls><source src='audio/3/%EC%9D%B4%20%EB%AC%B8%EC%A0%9C%EB%A5%BC%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%EB%8A%94%20%EC%A7%91%EC%97%90%20%EB%AA%BB%201.wav' type='audio/mpeg'></audio>
+            
+            <p>Different gaussian noise ε2, same temperature T=0.667</p>
+            <audio preload='metadata' controls><source src='audio/3/%EC%9D%B4%20%EB%AC%B8%EC%A0%9C%EB%A5%BC%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%EB%8A%94%20%EC%A7%91%EC%97%90%20%EB%AA%BB%202.wav' type='audio/mpeg'></audio>
+            
+            <p>Different gaussian noise ε3, same temperature T=0.667</p>
+            <audio preload='metadata' controls><source src='audio/3/%EC%9D%B4%20%EB%AC%B8%EC%A0%9C%EB%A5%BC%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%EB%8A%94%20%EC%A7%91%EC%97%90%20%EB%AA%BB%203.wav' type='audio/mpeg'></audio>
+            
+        </div>
+
+    </div>
+    
+    <div id='section-4' class='section'>
+
+        <h3>Length Robustness</h3>
+        
+        <div class='labeled-audio'>
+            
+            <h4>유구한 역사와 전통에 빛나는 우리 대한국민은 3·1운동으로 건립된 대한민국임시정부의 법통과 
+                불의에 항거한 4·19민주이념을 계승하고, 조국의 민주개혁과 평화적 통일의 사명에 입각하여 
+                정의·인도와 동포애로써 민족의 단결을 공고히 하고, 모든 사회적 폐습과 불의를 타파하며, 
+                자율과 조화를 바탕으로 자유민주적 기본질서를 더욱 확고히 하여 정치·경제·사회·문화의 
+                모든 영역에 있어서 각인의 기회를 균등히 하고, 능력을 최고도로 발휘하게 하며, 
+                자유와 권리에 따르는 책임과 의무를 완수하게 하여, 안으로는 국민생활의 균등한 향상을 기하고 
+                밖으로는 항구적인 세계평화와 인류공영에 이바지함으로써 우리들과 우리들의 자손의 안전과 자유와 
+                행복을 영원히 확보할 것을 다짐하면서 1948년 7월 12일에 제정되고 8차에 걸쳐 개정된 헌법을 
+                이제 국회의 의결을 거쳐 국민투표에 의하여 개정한다.</h4>
+            
+            <audio preload='metadata' controls><source src='audio/4/%EC%9C%A0%EA%B5%AC%ED%95%9C%20%EC%97%AD%EC%82%AC%EC%99%80%20%EC%A0%84%ED%86%B5%EC%97%90%20%EB%B9%9B%EB%82%98%EB%8A%94%20%EC%9A%B0%EB%A6%AC%20%EB%8C%80.wav' type='audio/mpeg'></audio>
+            
+        </div>  
+        
+        <br>
+        
+        <div class='labeled-audio'>
+            
+            <h4>우리는 이에 조선이 독립국임과 조선인이 자주민임을 선언한다. 이 선언을 세계 온 나라에 알리어 
+                인류 평등의 크고 바른 도리를 분명히 하며, 이것을 후손들에게 깨우쳐 우리 민족이 자기의 힘으로 
+                살아가는 정당한 권리를 길이 지녀 누리게 하려는 것이다. 반만 년이나 이어 온 우리 역사의 권위에 
+                의지하여 독립을 선언하는 것이며, 이천만 민중의 정성된 마음을 모아서 이 선언을 널리 펴서 
+                밝히는 바이며, 민족의 한결 같은 자유 발전을 위하여 이것을 주장하는 것이며, 
+                누구나 자유와 평등을 누려야 한다는 인류적 양심이 드러남으로 말미암아 온 세계가 올바르게 바뀌는 
+                커다란 기회와 운수에 발맞추어 나아가기 위하여 이를 내세워 보이는 것이니, 이 독립 선언은 하늘의 
+                밝은 명령이며, 민족 자결주의에로 옮아 가는 시대의 큰 형세이며, 온 인류가 함께 살아갈 권리를 
+                실현하려는 정당한 움직임이므로, 천하의 무엇이든지 우리의 이 독립 선언을 가로막고 억누르지 
+                못할 것이다.</h4>
+            
+            <audio preload='metadata' controls><source src='audio/4/%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EC%9D%B4%EC%97%90%20%EC%A1%B0%EC%84%A0%EC%9D%B4%20%EB%8F%85%EB%A6%BD%EA%B5%AD%EC%9E%84%EA%B3%BC%20%EC%A1%B0%EC%84%A0%EC%9D%B8.wav' type='audio/mpeg'></audio>
+            
+        </div>  
+        
+        <br>
+        
+        <div class='labeled-audio'>
+            
+            <h4>오늘도 또 우리 수탉이 막 쫓기었다. 내가 점심을 먹고 나무를 하러 갈 양으로 나올 때이었다. 
+                산으로 올라서려니까 등뒤에서 푸드득 놈이 덩저리 작은 우리 수탉을 함부로 해내는 것이다. 
+                그것도 그냥 해내는 것이 아니라 푸드득하고 면두를 쪼고 물러섰다가 좀 사이를 두고 푸드득하고 
+                모가지를 쪼았다. 이렇게 멋을 부려 가며 여지없이 닦아 놓는다. 그러면 이 못생긴 것은 쪼일 
+                적마다 주둥이로 땅을 받으며 그 비명이 킥, 킥, 할 뿐이다. 물론 미처 아물지도 않은 면두를 
+                또 쪼이며 붉은 선혈은 뚝뚝 떨어진다. 이걸 가만히 내려다보자니 내 대강이가 터져서 피가 
+                흐르는 것 같이 두 눈에서 불이 번쩍 난다. 대뜸 지게막대기를 메고 달려들어 점순네 닭을 
+                후려칠까 하다가 생각을 고쳐먹고 헛매질로 떼어만 놓았다.</h4>
+            
+            <audio preload='metadata' controls><source src='audio/4/%EC%98%A4%EB%8A%98%EB%8F%84%20%EB%98%90%20%EC%9A%B0%EB%A6%AC%20%EC%88%98%ED%83%89%EC%9D%B4%20%EB%A7%89%20%EC%AB%93%EA%B8%B0%EC%97%88%EB%8B%A4..wav' type='audio/mpeg'></audio>
+            
+        </div>  
+        
+        <br>
+        
+
+    </div>   
+
+    <div id='section-5' class='section'>
+
+        <h3>Length Controllability</h3>
+        
+        <div class='labeled-audio'>
+            
+            <h4>간장 공장 공장장은 강 공장장이고 된장 공장 공장장은 공 공장장이다.</h4>
+            
+            <p>Predicted Duration x 0.50</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B0%84%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%80%20%EA%B0%95%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%B4%EA%B3%A0%20%EB%90%9C_0.50.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 0.75</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B0%84%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%80%20%EA%B0%95%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%B4%EA%B3%A0%20%EB%90%9C_0.75.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.00</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B0%84%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%80%20%EA%B0%95%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%B4%EA%B3%A0%20%EB%90%9C_1.00.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.25</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B0%84%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%80%20%EA%B0%95%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%B4%EA%B3%A0%20%EB%90%9C_1.25.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.50</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B0%84%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%80%20%EA%B0%95%20%EA%B3%B5%EC%9E%A5%EC%9E%A5%EC%9D%B4%EA%B3%A0%20%EB%90%9C_1.50.wav' type='audio/mpeg'></audio>
+            
+        </div>  
+        
+        <br>
+        
+        <div class='labeled-audio'>
+            
+            <h4>경찰청 철창살은 외철창살이고 검찰청 철창살은 쌍철창살이다.</h4>
+            
+            <p>Predicted Duration x 0.50</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B2%BD%EC%B0%B0%EC%B2%AD%20%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%80%20%EC%99%B8%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%B4%EA%B3%A0%20%EA%B2%80%EC%B0%B0%EC%B2%AD%20_0.50.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 0.75</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B2%BD%EC%B0%B0%EC%B2%AD%20%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%80%20%EC%99%B8%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%B4%EA%B3%A0%20%EA%B2%80%EC%B0%B0%EC%B2%AD%20_0.75.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.00</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B2%BD%EC%B0%B0%EC%B2%AD%20%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%80%20%EC%99%B8%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%B4%EA%B3%A0%20%EA%B2%80%EC%B0%B0%EC%B2%AD%20_1.00.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.25</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B2%BD%EC%B0%B0%EC%B2%AD%20%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%80%20%EC%99%B8%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%B4%EA%B3%A0%20%EA%B2%80%EC%B0%B0%EC%B2%AD%20_1.25.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.50</p>
+            <audio preload='metadata' controls><source src='audio/5/%EA%B2%BD%EC%B0%B0%EC%B2%AD%20%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%80%20%EC%99%B8%EC%B2%A0%EC%B0%BD%EC%82%B4%EC%9D%B4%EA%B3%A0%20%EA%B2%80%EC%B0%B0%EC%B2%AD%20_1.50.wav' type='audio/mpeg'></audio>
+            
+        </div>  
+        
+        <br>
+        
+        <div class='labeled-audio'>
+            
+            <h4>내가 그린 기린 그림은 목이 긴 기린 그림이고 네가 그린 기린 그림은 목이 짧은 기린 그림이다.</h4>
+            
+            <p>Predicted Duration x 0.50</p>
+            <audio preload='metadata' controls><source src='audio/5/%EB%82%B4%EA%B0%80%20%EA%B7%B8%EB%A6%B0%20%EA%B8%B0%EB%A6%B0%20%EA%B7%B8%EB%A6%BC%EC%9D%80%20%EB%AA%A9%EC%9D%B4%20%EA%B8%B4%20%EA%B8%B0%EB%A6%B0_0.50.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 0.75</p>
+            <audio preload='metadata' controls><source src='audio/5/%EB%82%B4%EA%B0%80%20%EA%B7%B8%EB%A6%B0%20%EA%B8%B0%EB%A6%B0%20%EA%B7%B8%EB%A6%BC%EC%9D%80%20%EB%AA%A9%EC%9D%B4%20%EA%B8%B4%20%EA%B8%B0%EB%A6%B0_0.75.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.00</p>
+            <audio preload='metadata' controls><source src='audio/5/%EB%82%B4%EA%B0%80%20%EA%B7%B8%EB%A6%B0%20%EA%B8%B0%EB%A6%B0%20%EA%B7%B8%EB%A6%BC%EC%9D%80%20%EB%AA%A9%EC%9D%B4%20%EA%B8%B4%20%EA%B8%B0%EB%A6%B0_1.00.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.25</p>
+            <audio preload='metadata' controls><source src='audio/5/%EB%82%B4%EA%B0%80%20%EA%B7%B8%EB%A6%B0%20%EA%B8%B0%EB%A6%B0%20%EA%B7%B8%EB%A6%BC%EC%9D%80%20%EB%AA%A9%EC%9D%B4%20%EA%B8%B4%20%EA%B8%B0%EB%A6%B0_1.25.wav' type='audio/mpeg'></audio>
+            
+            <p>Predicted Duration x 1.50</p>
+            <audio preload='metadata' controls><source src='audio/5/%EB%82%B4%EA%B0%80%20%EA%B7%B8%EB%A6%B0%20%EA%B8%B0%EB%A6%B0%20%EA%B7%B8%EB%A6%BC%EC%9D%80%20%EB%AA%A9%EC%9D%B4%20%EA%B8%B4%20%EA%B8%B0%EB%A6%B0_1.50.wav' type='audio/mpeg'></audio>
+            
+        </div>  
+
+    </div>
+                            
+                            
+</body>
+</html>
